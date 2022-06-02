@@ -1,0 +1,46 @@
+:root{
+    --grid-row:16;
+    --grid-col:16;
+}
+
+body{
+    background-color: coral;
+}
+
+#frame{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+#container{
+    width:500px;
+    height:500px;
+    display:grid;
+    background-color: crimson;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-col), 1fr);
+}
+
+#cell{
+    border: solid #584141;
+    border-width: 2px;
+    width:thin;
+}
+
+#buttons{
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+button{
+    margin: 5px;
+    background-color: #50ff79;
+}
+
+input{
+    margin: 5px;
+    width: 40px;
+}
