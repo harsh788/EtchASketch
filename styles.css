@@ -4,7 +4,7 @@
 }
 
 body{
-    background-color: coral;
+    background-color: #82b645;
 }
 
 #frame{
@@ -39,9 +39,22 @@ body{
 button{
     margin: 5px;
     background-color: #50ff79;
+    height: 30px;
+    width: 70px;
+    transition-duration: 0.5s;
+    border-radius: 2mm;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #46a4ef;
+    color: white;
 }
 
 input{
     margin: 5px;
     width: 40px;
+    height: 25px;
+    border-radius: 2mm;
+    background-color: #50ff79;
 }
