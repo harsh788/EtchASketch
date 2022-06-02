@@ -10,14 +10,21 @@ function defaultGrid(numOfRows){
     }
 }
 
+//Hover effect
 let nodeListCell = document.querySelectorAll("#cell");
 let arrayCell = Array.from(nodeListCell);
-
 arrayCell.forEach((div, index) => div.addEventListener("mouseover", (e) => { arrayCell[index].style.backgroundColor = RGB(); }));
 
+//Generating random value of RGB
 function RGB(){
     let r = Math.floor(Math.random()*256);
     let g = Math.floor(Math.random()*256);
     let b = Math.floor(Math.random()*256);
     return `rgb(${r},${g},${b})`;
 }
+
+//Using the clear button
+const clear = document.querySelector("#clear");
+clear.addEventListener("click", ()=> {
+    arrayCell.forEach((div, index) => arrayCell[index].style.backgroundColor = "crimson");
+});
