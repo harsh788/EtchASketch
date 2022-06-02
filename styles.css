@@ -18,6 +18,7 @@ body{
     width:500px;
     height:500px;
     display:grid;
+    cursor: pointer;
     background-color: crimson;
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-col), 1fr);

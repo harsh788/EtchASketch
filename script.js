@@ -4,10 +4,20 @@ defaultGrid(16);
 function defaultGrid(numOfRows){
     for(i=0;i<numOfRows*numOfRows;i++)
     {
-        const cell = document.createElement('div');
+        let cell = document.createElement('div');
         //cell.innerHTML = i+1;
         container.appendChild(cell).id = 'cell';
     }
+}
+
+function resizeGrid(val){
+    container.replaceChildren();
+    defaultGrid(val);
+    document.documentElement.style.setProperty("--grid-row", val);
+    document.documentElement.style.setProperty("--grid-col", val);
+    nodeListCell = document.querySelectorAll("#cell");
+    arrayCell = Array.from(nodeListCell);
+    arrayCell.forEach((div, index) => div.addEventListener("mouseover", (e) => { arrayCell[index].style.backgroundColor = RGB(); }));
 }
 
 //Hover effect
@@ -24,7 +34,18 @@ function RGB(){
 }
 
 //Using the clear button
-const clear = document.querySelector("#clear");
-clear.addEventListener("click", ()=> {
-    arrayCell.forEach((div, index) => arrayCell[index].style.backgroundColor = "crimson");
-});
+let clear = document.querySelector("#clear");
+clear.addEventListener("click", clean);
+function clean(){
+    for(let i=0;i<arrayCell.length;i++)
+    {
+        arrayCell[i].style.backgroundColor = "crimson";
+    }
+}
+
+//Using the resize button
+let resize = document.querySelector("#resize");
+resize.addEventListener("click", ()=> {
+    var val = document.querySelector("input").value;
+    resizeGrid(val);
+})
