@@ -1,4 +1,5 @@
 const container = document.getElementById('container');
+prevVal = 16;
 defaultGrid(16);
 
 function defaultGrid(numOfRows){
@@ -45,7 +46,22 @@ function clean(){
 
 //Using the resize button
 let resize = document.querySelector("#resize");
+let input = document.querySelector("input");
 resize.addEventListener("click", ()=> {
     var val = document.querySelector("input").value;
-    resizeGrid(val);
+    if(val>100)
+    {
+        alert("Value too high!!");
+        input.value = prevVal;
+    }
+    else if(val<=0)
+    {
+        alert("Value too low!!");
+        input.value = prevVal;
+    }
+    else
+    {
+        prevVal = val;
+        resizeGrid(val);
+    }
 })
